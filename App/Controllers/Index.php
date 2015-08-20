@@ -3,16 +3,16 @@
 namespace App\Controllers;
 
 use SON\Controller\Action;
+use SON\Di\Container;
 
 class Index extends Action
 {
     public function index()
     {
-        $nomes = array();
-        $nomes[] = "Walber";
-        $nomes[] = "Jefferson";
+        $artigo = Container::getClass("Artigo");
+        $artigos = $artigo->fetchAll();
 
-        $this->view->nomes = $nomes;
+        $this->view->artigos = $artigos;
 
         $this->render('index');
     }

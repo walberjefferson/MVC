@@ -1,0 +1,6 @@
+<h1>Controller: Index, Action: Index</h1>
+<ul>
+    <?php foreach($this->view->artigos as $nomes): ?>
+        <li><?php echo $nomes['titulo'] . ' - ' . $nomes['conteudo'] . ' - ' . $nomes['data']; ?></li>
+    <?php endforeach; ?>
+</ul>
